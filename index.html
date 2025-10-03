@@ -13,10 +13,7 @@
       --muted:#9aa6a6;
       --accent1:#7b5cff; /* purple */
       --accent2:#49b3ff; /* blue */
-      --glass: rgba(11,24,26,0.6);
       --card: rgba(12,30,30,0.7);
-      --radius: 14px;
-      --gap: 20px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     html,body{
@@ -25,10 +22,7 @@
       background: radial-gradient(1200px 600px at 75% 45%, rgba(58,133,143,0.12), transparent 12%),
                   linear-gradient(180deg,var(--bg1), var(--bg2) 60%);
       color: #dff7ff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
-
     .wrap{
       max-width:1200px;
       margin:48px auto;
@@ -38,17 +32,11 @@
       gap:32px;
       align-items:center;
     }
-
-    /* Left column */
-    .hero-left{
-      padding-right:12px;
-    }
+    .hero-left{ padding-right:12px; }
     h1{
       font-size:64px;
       line-height:1;
       margin:0 0 8px 0;
-      color: linear-gradient(90deg,var(--accent1),var(--accent2));
-      letter-spacing:-1px;
       font-weight:700;
     }
     .title-gradient{
@@ -58,20 +46,8 @@
       color: transparent;
       display:inline-block;
     }
-
-    p.lead{
-      margin:0 0 22px 0;
-      color: var(--muted);
-      font-size:18px;
-      max-width:680px;
-    }
-
-    .btn-row{
-      display:flex;
-      gap:12px;
-      margin-bottom:28px;
-    }
-
+    p.lead{ margin:0 0 22px 0; color: var(--muted); font-size:18px; max-width:680px; }
+    .btn-row{ display:flex; gap:12px; margin-bottom:28px; }
     .btn{
       padding:10px 16px;
       border-radius:10px;
@@ -80,186 +56,78 @@
       font-weight:600;
       font-size:15px;
       box-shadow: 0 6px 18px rgba(2,8,10,0.45);
+      text-decoration:none;
     }
-    .btn-primary{
-      background: linear-gradient(90deg,var(--accent1), var(--accent2));
-      color: #02141a;
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .btn-dark{
-      background: rgba(255,255,255,0.02);
-      color: var(--muted);
-    }
-
-    /* Cards */
-    .card-row{
-      display:flex;
-      gap:16px;
-      margin-top:6px;
-      flex-wrap:wrap;
-    }
+    .btn-primary{ background: linear-gradient(90deg,var(--accent1), var(--accent2)); color: #02141a; }
+    .btn-ghost{ background: rgba(255,255,255,0.03); color: var(--muted); }
+    .btn-dark{ background: rgba(255,255,255,0.02); color: var(--muted); }
+    .card-row{ display:flex; gap:16px; margin-top:6px; flex-wrap:wrap; }
     .card{
       background: var(--card);
       border-radius:12px;
       padding:20px;
       width: calc((100% - 2 * 16px) / 3);
       min-width:220px;
-      box-shadow: 0 6px 20px rgba(3,10,12,0.5);
-      border: 1px solid rgba(255,255,255,0.02);
     }
-    .card h3{
-      margin:0 0 8px 0;
-      font-size:16px;
-      color:#dff7ff;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.4;
-    }
-
-    /* Right column - krill */
-    .hero-right{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      position:relative;
-    }
-    .krill-blob{
-      width:520px;
-      height:420px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    /* Responsive */
+    .card h3{ margin:0 0 8px 0; font-size:16px; color:#dff7ff; }
+    .card p{ margin:0; color:var(--muted); font-size:14px; line-height:1.4; }
+    .hero-right{ display:flex; justify-content:center; align-items:center; }
+    .krill-blob{ width:520px; height:420px; display:flex; justify-content:center; align-items:center; }
     @media (max-width:980px){
       .wrap{ grid-template-columns: 1fr; padding:28px; }
       .krill-blob{ width:100%; height:260px; margin-top:18px; }
       h1{ font-size:48px; }
       .card{ width:100%; }
     }
-
-    /* small styling niceties */
-    a { color: inherit; text-decoration:none; }
-    .muted-small{ color:var(--muted); font-size:13px; margin-top:8px; display:block;}
   </style>
 </head>
 <body>
-  <main class="wrap" role="main">
+  <main class="wrap">
     <section class="hero-left">
       <h1><span class="title-gradient">Krill</span></h1>
       <p class="lead">Powerful binary generator for Roblox.</p>
 
-      <div class="btn-row" role="navigation" aria-label="primary actions">
+      <div class="btn-row">
         <a class="btn btn-primary" href="#learn">Learn</a>
         <a class="btn btn-ghost" href="#api">API Reference</a>
-        <a class="btn btn-dark" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-dark" href="https://github.com/datashe192/Krill" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
 
-      <div class="card-row" aria-hidden="false">
+      <div class="card-row">
         <div class="card">
           <h3>Simple and easy-to-use</h3>
           <p>Provides a straightforward API to generate binary strings for any Roblox structure.</p>
         </div>
-
         <div class="card">
           <h3>Turing Complete</h3>
           <p>A compact engine that can express control flow and variable transforms for binary generation pipelines.</p>
         </div>
-
         <div class="card">
           <h3>Modular</h3>
           <p>Split into small modules for easy swapping and lightweight builds tailored to your game.</p>
         </div>
       </div>
-
-      <span class="muted-small">Built for speed. Designed to slot into Roblox toolchains.</span>
     </section>
 
-    <aside class="hero-right" aria-hidden="true">
-      <div class="krill-blob" role="img" aria-label="Stylized krill illustration">
-        <!-- Inline SVG krill — purple / blue palette -->
-        <svg viewBox="0 0 600 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <aside class="hero-right">
+      <div class="krill-blob">
+        <!-- Inline SVG krill in purple/blue -->
+        <svg viewBox="0 0 600 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="g1" x1="0" x2="1">
               <stop offset="0" stop-color="#7b5cff"/>
               <stop offset="1" stop-color="#4ec3ff"/>
             </linearGradient>
-            <radialGradient id="g2" cx="30%" cy="30%">
-              <stop offset="0" stop-color="#b991ff" stop-opacity="0.95"/>
-              <stop offset="1" stop-color="#3aa9ff" stop-opacity="0.85"/>
-            </radialGradient>
-            <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="18" stdDeviation="30" flood-opacity="0.35" flood-color="#0a2130"/>
-            </filter>
           </defs>
-
-          <!-- soft glow background circle -->
-          <g filter="url(#f1)">
-            <ellipse cx="320" cy="240" rx="220" ry="140" fill="url(#g2)" opacity="0.18"/>
-          </g>
-
-          <!-- krill body -->
-          <g transform="translate(160,60) scale(1.05)">
-
-            <!-- tail fin -->
-            <path d="M420 220c-14 22 -40 42 -70 46 -21 3 -38 -5 -48 -12 22 -12 48 -28 70 -53 26 -29 48 -66 68 -66 4 0 18 36 8 85z"
-                  fill="url(#g1)" opacity="0.95" />
-
-            <!-- main shell / carapace -->
-            <path d="M90 160c10 -45 62 -86 130 -96 110 -16 210 30 242 110 36 88 -38 132 -126 154 -82 20 -232 -28 -246 -168z"
-                  fill="url(#g1)" opacity="0.98"/>
-
-            <!-- segmented back -->
-            <g opacity="0.95">
-              <ellipse cx="170" cy="150" rx="68" ry="36" fill="#6a44ff" transform="rotate(-12 170 150)" opacity="0.85"/>
-              <ellipse cx="220" cy="160" rx="78" ry="44" fill="#5fb6ff" transform="rotate(-9 220 160)" opacity="0.6"/>
-              <ellipse cx="264" cy="175" rx="88" ry="46" fill="#7c5bff" transform="rotate(-6 264 175)" opacity="0.6"/>
-            </g>
-
-            <!-- eye -->
-            <g transform="translate(110,120) scale(1)">
-              <circle cx="0" cy="0" r="12" fill="#001824" />
-              <circle cx="-4" cy="-4" r="4" fill="#9fe8ff" opacity="0.95"/>
-            </g>
-
-            <!-- legs / antennae -->
-            <g stroke="rgba(255,255,255,0.12)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
-              <path d="M150 220c-38 16 -66 22 -92 10" stroke="#7b5cff"/>
-              <path d="M170 230c-42 22 -74 30 -102 18" stroke="#4ec3ff"/>
-              <path d="M200 240c-48 28 -80 36 -112 22" stroke="#a48cff" opacity="0.85"/>
-              <path d="M330 200c28 10 46 20 70 42" stroke="#81bfff" opacity="0.7"/>
-            </g>
-
-            <!-- subtle highlight -->
-            <path d="M130 100c40 -10 120 -18 200 12" stroke="#f1f9ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.08" fill="none"/>
-
-          </g>
-
+          <!-- simple krill body -->
+          <ellipse cx="300" cy="250" rx="180" ry="80" fill="url(#g1)" opacity="0.9"/>
+          <circle cx="190" cy="230" r="15" fill="#001824"/>
+          <circle cx="185" cy="225" r="5" fill="#9fe8ff"/>
+          <path d="M320 250c40 10 80 30 110 60" stroke="#7b5cff" stroke-width="6" fill="none" stroke-linecap="round" />
+          <path d="M280 260c-40 20 -70 25 -100 15" stroke="#4ec3ff" stroke-width="6" fill="none" stroke-linecap="round"/>
         </svg>
       </div>
     </aside>
   </main>
-
-  <!-- Minimal JS for smooth anchor scroll (optional) -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
-    });
-  </script>
 </body>
 </html>

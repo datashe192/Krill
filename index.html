@@ -1,121 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Krill Docs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Krill — Powerful binary generator for Roblox</title>
+  <meta name="description" content="Powerful binary generator for Roblox.">
   <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
-      display: flex;
+    :root{
+      --bg1:#051018;
+      --bg2:#06232b;
+      --sidebar:#0f2b2a;
+      --muted:#9aa6a6;
+      --accent1:#7b5cff;
+      --accent2:#49b3ff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    /* Sidebar */
-    .sidebar {
-      width: 220px;
-      background: #161b22;
-      padding: 20px;
-      height: 100vh;
-      box-sizing: border-box;
+    html,body{
+      margin:0;
+      height:100%;
+      background:linear-gradient(180deg,var(--bg1), var(--bg2) 60%);
+      color:#dff7ff;
     }
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #58a6ff;
-      margin-bottom: 20px;
+    body{display:flex;}
+    .sidebar{
+      width:240px;
+      background:var(--sidebar);
+      padding:20px;
+      box-sizing:border-box;
+      display:flex;
+      flex-direction:column;
     }
-    .sidebar a {
-      display: block;
-      color: #c9d1d9;
-      text-decoration: none;
-      padding: 8px 0;
-      font-size: 14px;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:700;
+      font-size:20px;
+      margin-bottom:20px;
     }
-    .sidebar a.active {
-      color: #58a6ff;
-      font-weight: bold;
+    .logo svg{width:28px;height:24px;}
+    .sidebar a{
+      padding:8px 0;
+      color:#c9d1d9;
+      text-decoration:none;
+      font-size:14px;
     }
-
-    /* Main content */
-    .content {
-      flex: 1;
-      padding: 40px;
+    .sidebar a.active{color:var(--accent2);font-weight:600;}
+    .content{
+      flex:1;
+      padding:40px;
+      overflow-y:auto;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
+    h1{margin-top:0;}
+    .krill-button{
+      margin:20px 0;
+      padding:10px 20px;
+      background:linear-gradient(90deg,var(--accent1), var(--accent2));
+      border:none;
+      border-radius:6px;
+      color:#02141a;
+      cursor:pointer;
+      font-weight:600;
     }
-    pre {
-      background: #161b22;
-      padding: 15px;
-      border-radius: 6px;
-      overflow-x: auto;
+    pre{
+      background:#081920;
+      padding:16px;
+      border-radius:6px;
+      overflow-x:auto;
     }
-    code {
-      font-family: monospace;
-      font-size: 14px;
+    code{font-family:monospace;font-size:14px;}
+    .nav-buttons{
+      display:flex;
+      justify-content:space-between;
+      margin-top:40px;
     }
-
-    /* Button style like Krill */
-    .krill-button {
-      margin: 20px 0;
-      padding: 10px 20px;
-      background: #238636;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
+    .nav-buttons button{
+      background:none;
+      border:1px solid #30363d;
+      padding:8px 16px;
+      border-radius:6px;
+      color:#c9d1d9;
+      cursor:pointer;
     }
-    .krill-button:hover {
-      background: #2ea043;
-    }
-
-    /* Navigation */
-    .nav-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
-    .nav-buttons button {
-      background: none;
-      border: 1px solid #30363d;
-      padding: 8px 16px;
-      border-radius: 6px;
-      color: #c9d1d9;
-      cursor: pointer;
-    }
-    .nav-buttons button:hover {
-      background: #21262d;
-    }
-    .hidden {
-      display: none;
-    }
+    .nav-buttons button:hover{background:#132026;}
+    .hidden{display:none;}
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <div class="logo">🦐 Krill</div>
+    <div class="logo">
+      <!-- Krill logo SVG -->
+      <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#7b5cff"/>
+            <stop offset="1" stop-color="#4ec3ff"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="250" rx="80" ry="30" fill="url(#g1)" opacity="0.9"/>
+        <circle cx="250" cy="245" r="5" fill="#001824"/>
+        <circle cx="248" cy="243" r="2" fill="#9fe8ff"/>
+      </svg>
+      Krill
+    </div>
     <a href="#" class="tab-link active" data-tab="installation">Installation</a>
     <a href="#" class="tab-link" data-tab="setup">Setup</a>
   </div>
 
   <div class="content">
+    <!-- Installation -->
     <div id="installation" class="tab-content">
-      <h1>Krill Printing</h1>
-      <button class="krill-button">Run Example</button>
-      <pre><code>local Krill = require(path.to.krill)
-Krill:printbinary("Hello, World!")</code></pre>
+      <h1>Installation</h1>
+      <button class="krill-button">Install Krill</button>
       <div class="nav-buttons">
         <button class="prev hidden">Previous page</button>
         <button class="next">Next page</button>
       </div>
     </div>
 
+    <!-- Setup -->
     <div id="setup" class="tab-content" style="display:none;">
-      <h1>Setup</h1>
-      <p>Here you would describe how to set up Krill in your project.</p>
+      <h1>Krill Printing</h1>
+      <pre><code>local Krill = require(path.to.krill)
+Krill:printbinary("Hello, World!")</code></pre>
       <div class="nav-buttons">
         <button class="prev">Previous page</button>
         <button class="next hidden">Next page</button>
@@ -126,33 +133,26 @@ Krill:printbinary("Hello, World!")</code></pre>
   <script>
     const links = document.querySelectorAll('.tab-link');
     const contents = document.querySelectorAll('.tab-content');
-    const prevButtons = document.querySelectorAll('.prev');
-    const nextButtons = document.querySelectorAll('.next');
 
-    function showTab(tabId) {
-      contents.forEach(c => c.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
-      links.forEach(l => l.classList.remove('active'));
+    function showTab(tabId){
+      contents.forEach(c=>c.style.display='none');
+      document.getElementById(tabId).style.display='block';
+      links.forEach(l=>l.classList.remove('active'));
       document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
     }
 
-    links.forEach(link => {
-      link.addEventListener('click', e => {
+    links.forEach(link=>{
+      link.addEventListener('click',e=>{
         e.preventDefault();
         showTab(link.dataset.tab);
       });
     });
 
-    prevButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        showTab('installation');
-      });
+    document.querySelectorAll('.prev').forEach(btn=>{
+      btn.addEventListener('click',()=>showTab('installation'));
     });
-
-    nextButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        showTab('setup');
-      });
+    document.querySelectorAll('.next').forEach(btn=>{
+      btn.addEventListener('click',()=>showTab('setup'));
     });
   </script>
 </body>
